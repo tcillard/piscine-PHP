@@ -1,0 +1,17 @@
+<- Vertex ----------------------------------------------------------------------
+new Vertex( array( 'x' => 1.0, 'y' => 0.0, 'z' => 0.0, 'color' => $green ) );
+  x obligate
+  y obligate
+  z obligate
+  w optional
+  color optional
+x y z w are float
+color is a Color instance
+you can get value with : $Vertex->get_value(x|z|y|w|color)
+you can set value with : $Vertex->set_value(array('x|z|y|w' => '1.00', 'x|z|w|y' '3.00'))
+you can set color with : $Vertex->set_colro($color_instance)
+if Vertex::verbose is True, contruct and destruct display the value of all variables
+echo $Vertex print all variables
+if Vertex::verbose is False, no display in construc and destruct
+echo $Vertex print all variables except color
+---------------------------------------------------------------------- Vertex ->
