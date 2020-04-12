@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <title>todo</title>
   <style>
     body{
@@ -14,44 +15,70 @@
       display: flex;
       flex-direction: column;
       height: 100%;
-      width: 600px;
+      width: 641px;
       text-align: center;
       color: rgb(230, 230, 230);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 50px;
     }
     .case{
-      text-align: center;
+      display: flex;
       height: 40px;
-      font-size: 30px;
-      color: rgb(38, 38, 38);
       border: solid;
       border-color: rgb(38, 38, 38);
       border-radius: 8px;
-      background-color: rgb(230, 230, 230);
-      overflow: hidden;
     }
-    .case:hover .delete{
-      display: block;
+    .ft_list{
+      font-size: 30px;
+      width: 600px;
       color: rgb(38, 38, 38);
+      border-color: rgb(38, 38, 38);
+      border-radius: 8px;
+      background-color: rgb(230, 230, 230);
+      border-radius: 8px;
+      overflow: scroll;
+    }
+    .delete{
+      display: none;
+    }
+     .case:hover .delete{
+      display: flex;
+      margin-top: 7px;
+      margin-left: 10px;
+      width: 25px;
+      height: 25px;
+      font-size: 15px;
+      border-radius: 100%;
+      background-color: rgb(38, 38, 38);
+      color: rgb(230, 230, 230);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: bold;
     }
     #button_new{
       height: 40px;
-      width: 596px;
+      width: 600px;
       margin-left: 2px;
       font-size: 30px;
       border-radius: 8px;
       margin-top: 3px;
     }
   </style>
-  <script type="text/text/javascript" src="todo.js"></script>
+  <script src="todo.js"></script>
 </head>
 <body>
   <div id="table">
-    <strong><span>Todo List</span></strong>
-    <div class="case">salut<div class="delete">X</div></div>
-    <div class="case">tous le monde<div class="delete">X</div></div>
-    <input type="button" id="button_new" value="New"></input>
+      <strong><span>Todo List</span></strong>
+      <div class="case">
+        <div class="ft_list">salut tous le monde ceci est un test qui a pour but d'0verflow</div>
+        <button class="delete">X</button>
+      </div>
+      <div class="case">
+        <div class="ft_list">tous le monde</div>
+        <button class="delete">X</button>
+      </div>
+      <input type="button" id="button_new" value="New"></input>
   </div>
 </body>
 </html>
