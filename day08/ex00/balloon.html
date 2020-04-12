@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Balloon</title>
+    <style>
+      body{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+    <script type="text/javascript">
+      function  creat_balloon()
+      {
+        var balloon = document.getElementById("balloon");
+        balloon.style.backgroundColor = 'red';
+        balloon.style.height = '200px';
+        balloon.style.width = '200px';
+        balloon.style.borderRadius = '100%';
+      }
+      function  change_color(balloon, rev){
+        var color = balloon.style.backgroundColor;
+        if ((!rev && color == "red") || (rev && color == "blue"))
+          balloon.style.backgroundColor = "green";
+        else if ((!rev && color == 'green') || (rev && color == 'red'))
+          balloon.style.backgroundColor = 'blue';
+        else if ((!rev && color == 'blue') || (rev && color == 'green'))
+          balloon.style.backgroundColor = 'red';
+      }
+      function  bigger(){
+        var balloon = document.getElementById("balloon");
+        console.log(balloon.offsetHeight);
+        balloon.style.height = balloon.offsetHeight + 10;
+        balloon.style.width = balloon.offsetHeight;
+        change_color(balloon, 0);
+        if (balloon.offsetHeight > 420)
+        {
+          balloon.style.height = "200px";
+          balloon.style.width = "200px";
+        }
+      }
+      function lesser(){
+        var balloon = document.getElementById("balloon");
+        if (balloon.offsetHeight > 200)
+        {
+          balloon.style.height = balloon.offsetHeight - 5;
+          balloon.style.width = balloon.offsetHeight;
+        }
+        change_color(balloon, 1);
+      }
+    </script>
+  </head>
+  <body onload="creat_balloon()">
+      <div onclick="bigger()" onmouseleave="lesser()" id="balloon"></div>
+  </body>
+</html>
