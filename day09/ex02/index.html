@@ -41,6 +41,10 @@
     .delete{
       display: none;
     }
+    #nothing{
+      display: flex;
+      flex-direction: column-reverse;
+    }
      .case:hover .delete{
       display: flex;
       margin-top: 7px;
@@ -70,15 +74,9 @@
 <body>
   <div id="table">
       <strong><span>Todo List</span></strong>
-      <div class="case">
-        <div class="ft_list">salut tous le monde ceci est un test qui a pour but d'0verflow</div>
-        <button class="delete">X</button>
+      <div id="nothing">
       </div>
-      <div class="case">
-        <div class="ft_list">tous le monde</div>
-        <button class="delete">X</button>
-      </div>
-      <input type="button" id="button_new" value="New"></input>
+      <input onclick="record_new()" type="button" id="button_new" value="New"></input>
   </div>
 </body>
 </html>
